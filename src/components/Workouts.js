@@ -14,8 +14,8 @@ function Workouts(props) {
       </Col>
       <Col md={8}>
         <Panel>
-          {<h1 className="page-title">{isNewWorkout ? "New workout" : "Edit workout"}</h1>}
-          <WorkoutForm 
+          {<h1 className="page-title">{isNewWorkout ? "New session" : "Edit session"}</h1>}
+          <WorkoutForm
             workoutId={activeWorkout.id}
             isNewWorkout={isNewWorkout}
             date={activeWorkout.date}

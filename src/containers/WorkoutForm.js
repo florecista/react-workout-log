@@ -27,7 +27,7 @@ class WorkoutForm extends Component {
     super(props);
 
     // form input state
-    this.state = { 
+    this.state = {
       date: props.date,
       exercises: props.exercises,
       activeExercise: false
@@ -64,7 +64,7 @@ class WorkoutForm extends Component {
 
   onAddExerciseClick(e) {
     e.preventDefault();
-    
+
     var newExercise = {
       id: shortid.generate(),
       name: '',
@@ -88,7 +88,7 @@ class WorkoutForm extends Component {
         activeExercise: exerciseId
       })
     }
-  } 
+  }
 
   onFormSubmit(e) {
     e.preventDefault();
@@ -183,7 +183,7 @@ class WorkoutForm extends Component {
           return {
             ...exercise,
             sets: [
-              ...exercise.sets.slice(0, setIndex), 
+              ...exercise.sets.slice(0, setIndex),
               ...exercise.sets.slice(setIndex + 1)
             ]
           }
@@ -234,20 +234,20 @@ class WorkoutForm extends Component {
           ref={(input) => { this.firstField = input}}
         />
         <div className="exercises">
-          <h2 className="form-header">Exercises</h2>
+          <h2 className="form-header">Movements</h2>
           {this.state.exercises.length > 0 &&
-            <PanelGroup 
-              activeKey={this.state.activeExercise} 
-              onSelect={this.onExerciseSelect} 
+            <PanelGroup
+              activeKey={this.state.activeExercise}
+              onSelect={this.onExerciseSelect}
               accordion
             >
               {this.state.exercises.map((exercise, index) => (
-                <Panel 
-                  header={exercise.name || `Exercise ${index + 1}`} 
+                <Panel
+                  header={exercise.name || `Exercise ${index + 1}`}
                   eventKey={exercise.id}
                   key={exercise.id}
                 >
-                  <ExerciseForm 
+                  <ExerciseForm
                     exerciseId={exercise.id}
                     name={exercise.name}
                     sets={exercise.sets}
@@ -264,22 +264,22 @@ class WorkoutForm extends Component {
           }
           <p className="add-item">
             <a href="#" onClick={this.onAddExerciseClick}>
-              Add exercise
+              Add movement
             </a>
           </p>
         </div>
         <ButtonToolbar>
           <Button type="submit" className="btn-primary">
-            {isNewWorkout ? "Log new" : "Update"} workout
+            {isNewWorkout ? "Log new" : "Update"} session
           </Button>
           {!isNewWorkout && (
             <LinkContainer to={{ pathname: "/workouts/new", query: { clone: workoutId } }}>
-              <Button bsStyle="success">Repeat workout</Button>
+              <Button bsStyle="success">Repeat session</Button>
             </LinkContainer>
           )}
           {!isNewWorkout && (
             <Button bsStyle="danger" onClick={this.onDeleteWorkoutClick}>
-              Delete workout
+              Delete session
             </Button>
           )}
         </ButtonToolbar>

@@ -65,14 +65,14 @@ class ExerciseForm extends Component {
           id={this.getInputName('name')}
           name={this.getInputName('name')}
           type="text"
-          label="Exercise"
+          label="Movement"
           value={name}
-          placeholder="Enter exercise name"
+          placeholder="Enter movement name"
           onChange={(e) => onInputChange("name", e.target.value)}
           ref={(input) => { this.firstField = input }}
         />
 
-        <h3 className="form-header">Sets</h3>
+        <h3 className="form-header">Components</h3>
         {sets.length > 0 &&
           <ListGroup className="sets">
             {sets.map((set, index) => (
@@ -90,7 +90,7 @@ class ExerciseForm extends Component {
           </ListGroup>
         }
         <p className="add-item">
-          <a href="#" onClick={this.onAddSetClick}>Add set</a>
+          <a href="#" onClick={this.onAddSetClick}>Add component</a>
         </p>
 
         <FieldGroup
@@ -102,7 +102,7 @@ class ExerciseForm extends Component {
           onChange={(e) => onInputChange("notes", e.target.value)}
         />
         <p className="remove-item remove-exercise">
-          <a href="#remove-exercise" onClick={this.onRemoveExerciseClick} className="text-danger">Remove exercise</a>
+          <a href="#remove-exercise" onClick={this.onRemoveExerciseClick} className="text-danger">Remove movement</a>
         </p>
       </div>
     )

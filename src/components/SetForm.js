@@ -40,44 +40,27 @@ class SetForm extends Component {
     return (
       <div className="set-form">
         <Row>
-          <Col className="col-xs-2">
-            <label className="row-label">Set {order}</label>
+          <Col className="col-xs-3">
+            <label className="row-label">Component {order}</label>
           </Col>
-          <Col className="col-xs-4 col-collapse-right">
+          <Col className="col-xs-7 col-collapse-right">
             <FieldGroup
               id={getInputName('weight')}
               name={getInputName('weight')}
-              type="number"
-              min="0"
-              step="5"
-              label="Weight"
+              type="text"
+              label="Name"
               srOnly={true}
               value={weight}
-              placeholder="Weight"
-              suffix="lbs"
+              placeholder="Name"
               onChange={(e) => onInputChange("weight", e.target.value)}
               ref={(input) => { this.firstField = input }}
             />
           </Col>
-          <Col className="col-xs-4 col-collapse-right">
-            <FieldGroup
-              id={getInputName('reps')}
-              name={getInputName('reps')}
-              type="number"
-              min="0"
-              label="Reps"
-              srOnly={true}
-              value={reps}
-              placeholder="Reps"
-              suffix="reps"
-              onChange={(e) => onInputChange("reps", e.target.value)}
-            />
-          </Col>
           <Col className="col-xs-2">
             <div className="remove-set">
-              <a 
-                href="#remove-set-{order}" 
-                onClick={this.onRemoveSetClick} 
+              <a
+                href="#remove-set-{order}"
+                onClick={this.onRemoveSetClick}
                 className="text-danger"
               >
                 Remove

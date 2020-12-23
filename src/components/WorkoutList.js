@@ -12,7 +12,7 @@ class WorkoutList extends Component {
         {workouts.length > 0 && (
           <LinkContainer to="/workouts/new">
             <ListGroupItem
-              header="New workout"
+              header="New session"
               className="new-workout-btn"
             >
             </ListGroupItem>
@@ -20,19 +20,19 @@ class WorkoutList extends Component {
         )}
         {workouts.length > 0 ? workouts.map((workout, index) => (
           <LinkContainer to={`/workouts/${workout.id}`} key={workout.id}>
-            <ListGroupItem 
+            <ListGroupItem
               header={moment(workout.date).format("ddd., MMM. D YYYY")}
             >
               <span className="details">
-                {workout.exercises.map(exercise => exercise.name).join(', ') || "You didn't log any exercises."}
+                {workout.exercises.map(exercise => exercise.name).join(', ') || "You didn't log any movements."}
               </span>
             </ListGroupItem>
           </LinkContainer>
         )) :  (
-          <ListGroupItem 
+          <ListGroupItem
             header="You haven't logged any workouts yet">
             <span className="details">
-              Log your first workout to get started!
+              Log your first session to get started!
             </span>
           </ListGroupItem>
         )}
