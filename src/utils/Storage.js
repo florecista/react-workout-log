@@ -4,18 +4,11 @@ import shortid from 'shortid';
 
 class Storage {
 	constructor() {
-    // set up firebase
-   // var config = {
-   //   apiKey: "AIzaSyC02BDarkzp-jMztlBI32cQOlEZvVluv7M",
-    //  authDomain: "workout-log-a0c07.firebaseapp.com",
-    //  databaseURL: "https://workout-log-a0c07.firebaseio.com",
-    //  storageBucket: "workout-log-a0c07.appspot.com",
-   //   messagingSenderId: "141837028377"
-   // };
-
+ 
   var config = {
     apiKey: "AIzaSyBkqmRHwL9C5zRwEMylmb-QXa7HP4K-A8I",
     authDomain: "workout-log-37c32.firebaseapp.com",
+    databaseURL: "https://workout-log-37c32-default-rtdb.firebaseio.com",
     projectId: "workout-log-37c32",
     storageBucket: "workout-log-37c32.appspot.com",
     messagingSenderId: "573900446310",
